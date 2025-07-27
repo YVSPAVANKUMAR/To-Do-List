@@ -1,0 +1,179 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .app-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 450px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .input-group input,
+    .input-group select,
+    .input-group button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .input-group input[type="text"],
+    .input-group input[type="datetime-local"],
+    .input-group select {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .input-group input::placeholder {
+      color: #ddd;
+    }
+
+    .input-group button {
+      background: #ff4b2b;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .input-group button:hover {
+      background: #ff6a4b;
+      transform: scale(1.05);
+    }
+
+    .task-list {
+      list-style: none;
+      padding: 0;
+      max-height: 250px;
+      overflow-y: auto;
+    }
+
+    .task-list li {
+      background: rgba(255, 255, 255, 0.15);
+      margin: 8px 0;
+      padding: 12px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+      opacity: 0;
+      transform: translateY(-10px);
+      animation: fadeIn 0.4s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .task-list li.removing {
+      animation: fadeOut 0.4s forwards;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+    }
+
+    .priority {
+      padding: 3px 7px;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    .low {
+      background: #4caf50;
+    }
+    .medium {
+      background: #ff9800;
+    }
+    .high {
+      background: #e63946;
+    }
+
+    .delete-btn {
+      background: #e63946;
+      border: none;
+      color: white;
+      padding: 5px 8px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: 0.3s;
+    }
+
+    .delete-btn:hover {
+      background: #ff4b5c;
+      transform: scale(1.05);
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      margin-top: 15px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+      height: 10px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 10px;
+      background: #00ffae;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      .input-group input,
+      .input-group button,
+      .input-group select {
+        font-size: 0.9rem;
+      }
+      .task-list li {
+        font-size: 0.9rem;
+      }
+    }
+    #priorityInput option {
+  color: #c33764;
+}
